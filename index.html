@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>コーラという、ひと口目の話</title>
+<meta name="description" content="コーラの魅力を、味・爽快感・飲み方の3つの視点から振り返る非公式のファンページ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#111;
+  --paper:#fff;
+  --soft:#f4f2ef;
+  --red:#d6001c;
+  --mute:#6b6b6b;
+  --max:1080px;
+  --gutter:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans JP",sans-serif;color:var(--ink);background:var(--paper);line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+
+/* header */
+header{position:absolute;top:0;left:0;right:0;z-index:5}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:72px}
+header .brand{color:#fff;font-weight:700;letter-spacing:.08em;font-size:14px;text-decoration:none}
+header nav a{color:#fff;text-decoration:none;font-size:13px;margin-left:28px;opacity:.85}
+header nav a:hover{opacity:1}
+
+/* hero */
+.hero{position:relative;background:#000;color:#fff;min-height:100svh;display:flex;align-items:center;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% center}
+.hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.hero h1{font-family:"Noto Serif JP",serif;font-weight:700;font-size:clamp(40px,7vw,84px);line-height:1.25;letter-spacing:.02em}
+.hero p{margin-top:28px;max-width:30em;font-size:clamp(15px,1.6vw,18px);opacity:.92}
+.btn{display:inline-block;margin-top:44px;background:var(--red);color:#fff;text-decoration:none;font-weight:700;padding:16px 36px;font-size:15px;letter-spacing:.04em}
+.btn:hover{background:#b00018}
+
+/* section base */
+section{padding:128px 0}
+.label{font-size:12px;letter-spacing:.2em;color:var(--mute);margin-bottom:20px}
+h2{font-family:"Noto Serif JP",serif;font-size:clamp(28px,4.2vw,48px);line-height:1.45;font-weight:700}
+.lead{margin-top:28px;max-width:34em}
+
+/* 主役：爽快感 */
+.fizz .grid{display:grid;grid-template-columns:5fr 6fr;gap:72px;align-items:center}
+.fizz h2 em{font-style:normal;color:var(--red)}
+.fizz img{width:100%;aspect-ratio:3/4;object-fit:cover}
+
+/* 味 */
+.taste{background:var(--soft)}
+.taste dl{margin-top:64px;border-top:1px solid var(--ink)}
+.taste .row{display:grid;grid-template-columns:200px 1fr;gap:32px;padding:28px 0;border-bottom:1px solid #cfcac3}
+.taste dt{font-weight:900;font-size:20px}
+.taste dd{max-width:36em}
+
+/* 見せ場：泡 */
+.macro{padding:0;background:#000;position:relative}
+.macro img{width:100%;height:min(70vh,640px);object-fit:cover}
+.macro p{position:absolute;left:0;right:0;bottom:48px;color:#fff;font-family:"Noto Serif JP",serif;font-size:clamp(20px,3vw,34px);font-weight:700}
+
+/* シーン */
+.scene .grid{display:grid;grid-template-columns:6fr 5fr;gap:72px;align-items:center}
+.scene img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.scene ul{list-style:none;margin-top:36px}
+.scene li{padding:18px 0;border-top:1px solid #ddd}
+.scene li:last-child{border-bottom:1px solid #ddd}
+.scene li b{display:block;font-size:17px}
+.scene li span{color:var(--mute);font-size:14px}
+
+/* 飲み方 */
+.guide{background:#111;color:#fff}
+.guide .label{color:#aaa}
+.guide ol{margin-top:56px;list-style:none;max-width:44em}
+.guide li{padding:22px 0;border-top:1px solid #333}
+.guide li:last-child{border-bottom:1px solid #333}
+.guide li b{display:block;font-size:18px;margin-bottom:4px}
+.guide li span{color:#bbb;font-size:15px}
+
+/* 締め */
+.close .grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.close img{width:100%;aspect-ratio:3/2;object-fit:cover}
+
+footer{padding:40px 0;font-size:12px;color:var(--mute);border-top:1px solid #e5e5e5}
+
+@media(max-width:820px){
+  :root{--gutter:20px}
+  section{padding:80px 0}
+  header nav{display:none}
+  .fizz .grid,.scene .grid,.close .grid{grid-template-columns:1fr;gap:40px}
+  .fizz img{aspect-ratio:4/3}
+  .scene .grid>div:first-child{order:2}
+  .taste .row{grid-template-columns:1fr;gap:6px}
+  .hero{flex-direction:column;align-items:stretch;min-height:0;padding-top:112px}
+  .hero::after{display:none}
+  .hero .wrap{order:1}
+  .hero img{order:2;position:static;height:auto;aspect-ratio:4/5;margin-top:48px;object-position:84% center}
+  .hero h1{font-size:34px}
+  .macro p{bottom:28px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">COLA NOTES</a>
+    <nav>
+      <a href="#taste">味</a>
+      <a href="#scene">シーン</a>
+      <a href="#guide">飲み方</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <img src="images/hero.png" alt="水滴をまとったガラス瓶のコーラ">
+    <div class="wrap">
+      <h1>ひと口目の、<br>あの一瞬の<wbr>ために。</h1>
+      <p>冷たさ、泡、そしてあとに残る甘み。百年以上、世界中で飲まれ続けてきた理由を、ゆっくり振り返ります。</p>
+      <a class="btn" href="#guide">いちばんおいしい飲み方を知る</a>
+    </div>
+  </div>
+
+  <section class="fizz">
+    <div class="wrap grid">
+      <img src="images/glass.png" alt="氷と炭酸の泡が立つグラスのコーラ" loading="lazy">
+      <div>
+        <p class="label">01　爽快感</p>
+        <h2>のどを通る、<br><em>あの刺激</em>。</h2>
+        <p class="lead">コーラの魅力を一つに絞るなら、ひと口目の爽快感です。強めの炭酸が舌とのどを一気に冷まし、甘みがそのあとを追いかけます。疲れた午後も、暑い日の帰り道も、この一瞬で気分が切り替わります。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="taste" id="taste">
+    <div class="wrap">
+      <p class="label">02　味</p>
+      <h2>甘いだけでは、<br>終わらない。</h2>
+      <dl>
+        <div class="row"><dt>甘み</dt><dd>最初に来る、はっきりした甘さ。冷たいほど輪郭が立ちます。</dd></div>
+        <div class="row"><dt>酸味</dt><dd>柑橘を思わせる軽い酸味が、甘さを重たくしません。</dd></div>
+        <div class="row"><dt>香り</dt><dd>バニラやシナモンを思わせるスパイスの香りが、鼻に抜けます。</dd></div>
+        <div class="row"><dt>炭酸</dt><dd>細かい泡が口の中ではじけ、後味を軽くします。</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="macro">
+    <img src="images/bubbles.png" alt="氷とコーラの泡のクローズアップ" loading="lazy">
+    <div class="wrap"><p>泡の一粒まで、おいしさのうち。</p></div>
+  </section>
+
+  <section class="scene" id="scene">
+    <div class="wrap grid">
+      <div>
+        <p class="label">03　シーン</p>
+        <h2>どんな場面にも、<br>合う一杯。</h2>
+        <ul>
+          <li><b>揚げ物や肉料理のとき</b><span>強い炭酸が口の中の脂をさっぱり流します。</span></li>
+          <li><b>外で過ごす夏の日</b><span>氷をたっぷり入れて、汗が引くまでゆっくり。</span></li>
+          <li><b>仕事の合間</b><span>数口で気分が切り替わります。</span></li>
+        </ul>
+      </div>
+      <img src="images/summer.png" alt="夏の屋外、木のテーブルに置かれたコーラ" loading="lazy">
+    </div>
+  </section>
+
+  <section class="guide" id="guide">
+    <div class="wrap">
+      <p class="label">04　飲み方</p>
+      <h2>いつもの一杯を、<br>もう少しおいしく。</h2>
+      <ol>
+        <li><b>しっかり冷やす</b><span>飲む前に冷蔵庫で4℃前後まで。炭酸が抜けにくく、味が引き締まります。</span></li>
+        <li><b>グラスは先に冷やす</b><span>氷を入れて少し置くと、注いだときの泡立ちが落ち着きます。</span></li>
+        <li><b>氷はグラスいっぱいに</b><span>氷が多いほど溶けにくく、最後まで薄まりません。</span></li>
+        <li><b>氷に当てずに、壁沿いに注ぐ</b><span>泡を逃がさず、炭酸が長持ちします。</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="close">
+    <div class="wrap grid">
+      <div>
+        <p class="label">05　さいごに</p>
+        <h2>今日の一本は、<br>冷えていますか。</h2>
+        <p class="lead">特別なことは必要ありません。冷やして、注いで、ひと口目を味わう。それだけで、いつものコーラが少し違って感じられます。</p>
+        <a class="btn" href="#top">もう一度はじめから見る</a>
+      </div>
+      <img src="images/pour.png" alt="グラスにコーラを注ぐ瞬間" loading="lazy">
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">このページは、コーラの魅力を紹介する非公式のファンページです。特定の企業・ブランドとは関係ありません。掲載画像は画像生成によるイメージです。</div>
+</footer>
+
+</body>
+</html>
