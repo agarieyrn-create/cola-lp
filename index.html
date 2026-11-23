@@ -14,6 +14,7 @@
 <meta property="og:image" content="https://agarieyrn-create.github.io/cola-lp/images/ogp.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23d6001c'/%3E%3C/svg%3E">
+<link rel="preload" as="image" href="images/hero.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
@@ -72,7 +73,8 @@ h2{font-family:"Noto Serif JP",serif;font-size:clamp(28px,4.2vw,48px);line-heigh
 /* 見せ場：泡 */
 .macro{padding:0;background:#000;position:relative}
 .macro img{width:100%;height:min(70vh,640px);object-fit:cover}
-.macro p{position:absolute;left:0;right:0;bottom:48px;color:#fff;font-family:"Noto Serif JP",serif;font-size:clamp(20px,3vw,34px);font-weight:700}
+.macro .wrap{position:absolute;left:0;right:0;bottom:48px}
+.macro p{color:#fff;font-family:"Noto Serif JP",serif;font-size:clamp(20px,3vw,34px);font-weight:700;text-shadow:0 1px 12px rgba(0,0,0,.45)}
 
 /* シーン */
 .scene .grid{display:grid;grid-template-columns:6fr 5fr;gap:72px;align-items:center}
@@ -111,7 +113,7 @@ footer{padding:40px 0;font-size:12px;color:var(--mute);border-top:1px solid #e5e
   .hero .wrap{order:1}
   .hero img{order:2;position:static;height:auto;aspect-ratio:4/5;margin-top:48px;object-position:84% center}
   .hero h1{font-size:34px}
-  .macro p{bottom:28px}
+  .macro .wrap{bottom:28px}
 }
 </style>
 </head>
@@ -130,7 +132,7 @@ footer{padding:40px 0;font-size:12px;color:var(--mute);border-top:1px solid #e5e
 
 <main id="top">
   <div class="hero">
-    <img src="images/hero.webp" alt="水滴をまとったガラス瓶のコーラ">
+    <img fetchpriority="high" decoding="async" src="images/hero.webp" alt="水滴をまとったガラス瓶のコーラ">
     <div class="wrap">
       <h1>ひと口目の、<br>あの一瞬の<wbr>ために。</h1>
       <p>冷たさ、泡、そしてあとに残る甘み。百年以上、世界中で飲まれ続けてきた理由を、ゆっくり振り返ります。</p>
@@ -140,7 +142,7 @@ footer{padding:40px 0;font-size:12px;color:var(--mute);border-top:1px solid #e5e
 
   <section class="fizz">
     <div class="wrap grid">
-      <img src="images/glass.webp" alt="氷と炭酸の泡が立つグラスのコーラ" loading="lazy">
+      <img src="images/glass.webp" alt="氷と炭酸の泡が立つグラスのコーラ" loading="lazy" decoding="async">
       <div>
         <p class="label">01　爽快感</p>
         <h2>のどを通る、<br><em>あの刺激</em>。</h2>
@@ -163,7 +165,7 @@ footer{padding:40px 0;font-size:12px;color:var(--mute);border-top:1px solid #e5e
   </section>
 
   <section class="macro">
-    <img src="images/bubbles.webp" alt="氷とコーラの泡のクローズアップ" loading="lazy">
+    <img src="images/bubbles.webp" alt="氷とコーラの泡のクローズアップ" loading="lazy" decoding="async">
     <div class="wrap"><p>泡の一粒まで、おいしさのうち。</p></div>
   </section>
 
@@ -178,7 +180,7 @@ footer{padding:40px 0;font-size:12px;color:var(--mute);border-top:1px solid #e5e
           <li><b>仕事の合間</b><span>数口で気分が切り替わります。</span></li>
         </ul>
       </div>
-      <img src="images/summer.webp" alt="夏の屋外、木のテーブルに置かれたコーラ" loading="lazy">
+      <img src="images/summer.webp" alt="夏の屋外、木のテーブルに置かれたコーラ" loading="lazy" decoding="async">
     </div>
   </section>
 
@@ -203,7 +205,7 @@ footer{padding:40px 0;font-size:12px;color:var(--mute);border-top:1px solid #e5e
         <p class="lead">特別なことは必要ありません。冷やして、注いで、ひと口目を味わう。それだけで、いつものコーラが少し違って感じられます。</p>
         <a class="btn" href="#top">もう一度はじめから見る</a>
       </div>
-      <img src="images/pour.webp" alt="グラスにコーラを注ぐ瞬間" loading="lazy">
+      <img src="images/pour.webp" alt="グラスにコーラを注ぐ瞬間" loading="lazy" decoding="async">
     </div>
   </section>
 </main>
